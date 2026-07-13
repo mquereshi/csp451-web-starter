@@ -34,6 +34,12 @@ Open: http://localhost:3000
 - `public/` — static UI (includes `/login`)
 - `docs/` — reports + screenshots checklist
 
+## Database Configuration
+
+`src/db/index.js` reads two environment variables:
+- `DB_URL` — connection string (defaults to `memory://local` for local dev)
+- `DB_POOL` — connection pool size (defaults to `4`)
+
 ## Required Branches
 Create these branches exactly:
 - `feature/user-authentication`
