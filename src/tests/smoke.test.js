@@ -11,6 +11,12 @@ const { connect } = require("../db");
   console.log("✅ smoke.test.js passed");
 })();
 
+(function authRouteCheck() {
+  const { router } = require("../routes/auth");
+  assert.ok(router, "auth router should be defined");
+  console.log("✅ auth route smoke check passed");
+})();
+
 (function dbQueryCheck() {
   const { insert, query } = require("../db");
   insert("users", { id: 1, email: "a@b.com" });
