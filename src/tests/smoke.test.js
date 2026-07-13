@@ -10,3 +10,9 @@ const { connect } = require("../db");
   assert.strictEqual(db.connected, true);
   console.log("✅ smoke.test.js passed");
 })();
+
+(function authRouteCheck() {
+  const { router } = require("../routes/auth");
+  assert.ok(router, "auth router should be defined");
+  console.log("✅ auth route smoke check passed");
+})();
