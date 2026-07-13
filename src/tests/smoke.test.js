@@ -10,3 +10,11 @@ const { connect } = require("../db");
   assert.strictEqual(db.connected, true);
   console.log("✅ smoke.test.js passed");
 })();
+
+(function dbQueryCheck() {
+  const { insert, query } = require("../db");
+  insert("users", { id: 1, email: "a@b.com" });
+  const rows = query("users", (r) => r.id === 1);
+  assert.strictEqual(rows.length, 1);
+  console.log("✅ db insert/query smoke check passed");
+})();
