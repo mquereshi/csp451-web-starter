@@ -16,3 +16,17 @@ const { connect } = require("../db");
   assert.ok(router, "api router should be defined");
   console.log("✅ api router smoke check passed");
 })();
+
+(function authRouteCheck() {
+  const { router } = require("../routes/auth");
+  assert.ok(router, "auth router should be defined");
+  console.log("✅ auth route smoke check passed");
+})();
+
+(function dbQueryCheck() {
+  const { insert, query } = require("../db");
+  insert("users", { id: 1, email: "a@b.com" });
+  const rows = query("users", (r) => r.id === 1);
+  assert.strictEqual(rows.length, 1);
+  console.log("✅ db insert/query smoke check passed");
+})();

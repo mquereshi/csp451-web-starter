@@ -14,7 +14,7 @@ This repository is a **starter template** for practicing:
 > "chore: remove sample conflict markers"`. See Walkthrough Step 2 for full
 > guidance.
 
-## Quick Start (API Branch Notes)
+## Quick Start (Auth + API Branch Notes)
 
 ```bash
 # 1. Remove the sample conflict markers in src/app.js first (see note above)
@@ -33,6 +33,12 @@ Open: http://localhost:3000
 - `src/db/` — database module (starts as a stub)
 - `public/` — static UI (includes `/login`)
 - `docs/` — reports + screenshots checklist
+
+## Database Configuration
+
+`src/db/index.js` reads two environment variables:
+- `DB_URL` — connection string (defaults to `memory://local` for local dev)
+- `DB_POOL` — connection pool size (defaults to `4`)
 
 ## Required Branches
 Create these branches exactly:
